@@ -23,8 +23,8 @@ public:
 		name = myname;
 	}
 	void ShowPersonInfo() const {
-		cout << "ÀÌ¸§ : " << name << ", ";
-		cout << "³ªÀÌ : " << age << endl;
+		cout << "이름 : " << name << ", ";
+		cout << "나이 : " << age << endl;
 	}
 	~Person() {
 		delete[]name;
