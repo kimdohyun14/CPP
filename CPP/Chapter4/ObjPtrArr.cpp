@@ -23,8 +23,8 @@ public:
 		name = myname;
 	}
 	void ShowPersonInfo() const {
-		cout << "ÀÌ¸§ : " << name << ", ";
-		cout << "³ªÀÌ : " << age << endl;
+		cout << "ì´ë¦„ : " << name << ", ";
+		cout << "ë‚˜ì´ : " << age << endl;
 	}
 	~Person() {
 		delete[]name;
@@ -38,9 +38,9 @@ int main() {
 	int age;
 
 	for (int i = 0; i < 3; i++) {
-		cout << "ÀÌ¸§ : ";
+		cout << "ì´ë¦„ : ";
 		cin >> namestr;
-		cout << "³ªÀÌ : ";
+		cout << "ë‚˜ì´ : ";
 		cin >> age;
 		parr[i] = new Person(namestr, age);
 	}
