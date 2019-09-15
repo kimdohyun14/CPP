@@ -1,51 +1,51 @@
-// °¡»óÇÔ¼ö¿Í »ó¼Ó¿¡ °ü·ÃÇÑ ³»¿ëµé
+// ê°€ìƒí•¨ìˆ˜ì™€ ìƒì†ì— ê´€ë ¨í•œ ë‚´ìš©ë“¤
 
-// virtual ¼Ò¸êÀÚ(°¡»ó ¼Ò¸êÀÚ)
-// °¡»ó ÇÔ¼ö Å×ÀÌºí (virtual function table)
-// ´ÙÁß »ó¼Ó
-// °¡»ó »ó¼Ó
+// virtual ì†Œë©¸ìž(ê°€ìƒ ì†Œë©¸ìž)
+// ê°€ìƒ í•¨ìˆ˜ í…Œì´ë¸” (virtual function table)
+// ë‹¤ì¤‘ ìƒì†
+// ê°€ìƒ ìƒì†
 
-// virtual ¼Ò¸êÀÚ
-// Å¬·¡½ºÀÇ »ó¼ÓÀ» »ç¿ëÇÔÀ¸·Î½á Áß¿äÇÏ°Ô Ã³¸®ÇØ¾ß µÇ´Â ºÎºÐÀÌ
-// »ó¼Ó ½Ã¿¡, ¼Ò¸êÀÚ¸¦ °¡»óÇÔ¼ö·Î ¸¸µé¾î¾ß ÇÑ´Ù.
+// virtual ì†Œë©¸ìž
+// í´ëž˜ìŠ¤ì˜ ìƒì†ì„ ì‚¬ìš©í•¨ìœ¼ë¡œì¨ ì¤‘ìš”í•˜ê²Œ ì²˜ë¦¬í•´ì•¼ ë˜ëŠ” ë¶€ë¶„ì´
+// ìƒì† ì‹œì—, ì†Œë©¸ìžë¥¼ ê°€ìƒí•¨ìˆ˜ë¡œ ë§Œë“¤ì–´ì•¼ í•œë‹¤.
 #include <iostream>
 
 class Parent {
 public:
 	Parent() {
-		std::cout << "Parent »ý¼ºÀÚ È£Ãâ" << std::endl;
+		std::cout << "Parent ìƒì„±ìž í˜¸ì¶œ" << std::endl;
 	}
 	virtual ~Parent() {
-		std::cout << "Parent ¼Ò¸êÀÚ È£Ãâ" << std::endl;
+		std::cout << "Parent ì†Œë©¸ìž í˜¸ì¶œ" << std::endl;
 	}
 };
 
 class Child : public Parent {
 public:
 	Child() {
-		std::cout << "Child »ý¼ºÀÚ È£Ãâ" << std::endl;
+		std::cout << "Child ìƒì„±ìž í˜¸ì¶œ" << std::endl;
 	}
 	~Child() {
-		std::cout << "Child ¼Ò¸êÀÚ È£Ãâ" << std::endl;
+		std::cout << "Child ì†Œë©¸ìž í˜¸ì¶œ" << std::endl;
 	}
 };
 
 int main() {
-	// Á¤»ó
-	std::cout << "--- Æò¹üÇÑ Child ¸¸µé¾úÀ» ¶§ ---" << std::endl;
+	// ì •ìƒ
+	std::cout << "--- í‰ë²”í•œ Child ë§Œë“¤ì—ˆì„ ë•Œ ---" << std::endl;
 	{ Child c; }
 	
-	// ChildÀÇ ¼Ò¸êÀÚ°¡ È£ÃâµÇÁö ¾Ê´Â´Ù.
-	// ¼Ò¸êÀÚ°¡ È£ÃâµÇÁö ¾Ê´Â´Ù¸é ¿©·¯°¡Áö ¹®Á¦°¡ »ý±æ ¼ö ÀÖ´Ù.
-	// ¸¸¾à¿¡ Child °´Ã¼¿¡¼­ ¸Þ¸ð¸®¸¦ µ¿ÀûÀ¸·Î ÇÒ´çÇÏ°í ¼Ò¸êÀÚ¿¡¼­ ÇØÁ¦ÇÏ´Âµ¥,
-	// ¼Ò¸êÀÚ°¡ È£Ãâ ¾È‰ç´Ù¸é ¸Þ¸ð¸® ´©¼ö(memory leak)°¡ »ý±ä´Ù.
+	// Childì˜ ì†Œë©¸ìžê°€ í˜¸ì¶œë˜ì§€ ì•ŠëŠ”ë‹¤.
+	// ì†Œë©¸ìžê°€ í˜¸ì¶œë˜ì§€ ì•ŠëŠ”ë‹¤ë©´ ì—¬ëŸ¬ê°€ì§€ ë¬¸ì œê°€ ìƒê¸¸ ìˆ˜ ìžˆë‹¤.
+	// ë§Œì•½ì— Child ê°ì²´ì—ì„œ ë©”ëª¨ë¦¬ë¥¼ ë™ì ìœ¼ë¡œ í• ë‹¹í•˜ê³  ì†Œë©¸ìžì—ì„œ í•´ì œí•˜ëŠ”ë°,
+	// ì†Œë©¸ìžê°€ í˜¸ì¶œ ì•ˆë¬ë‹¤ë©´ ë©”ëª¨ë¦¬ ëˆ„ìˆ˜(memory leak)ê°€ ìƒê¸´ë‹¤.
 
-	// ÇØ°á¹ý ´Ü¼øÈ÷ ParentÀÇ ¼Ò¸êÀÚ¸¦ virtual·Î ¸¸µé¾î¹ö¸®¸é µÈ´Ù.
-	// ÀÌ´Â Child ¼Ò¸êÀÚ¸¦ È£ÃâÇÏ¸é¼­ Child ¼Ò¸êÀÚ°¡ ¾Ë¾Æ¼­ Parent ¼Ò¸êÀÚ¸¦ È£ÃâÇÏ¹Ç·Î
-	// Parent ¼Ò¸êÀÚ¸¦ ¸ÕÀú È£ÃâÇÏ°Ô µÇ¸é, Parent´Â Child°¡ ÀÖ´ÂÁö ¾ø´ÂÁö ¸ð¸£¹Ç·Î,
-	// Child ¼Ò¸êÀÚ¸¦ È£ÃâÇØÁÙ ¼ö ¾ø´Ù. ±×·¡¼­ ¹®Á¦°¡ »ý±ä´Ù.
-	// ±×·¡¼­ Base Å¬·¡½ºµéÀº ¹Ýµå½Ã ¼Ò¸êÀÚ¸¦ virtual·Î ¸¸µé¾îÁÖ¾î¾ß ³ªÁß¿¡ ¹®Á¦°¡ ¹ß»ýÇÏÁö ¾Ê´Â´Ù.
-	std::cout << "--- Parent Æ÷ÀÎÅÍ·Î Child °¡¸®Ä×À» ¶§" << std::endl;
+	// í•´ê²°ë²• ë‹¨ìˆœížˆ Parentì˜ ì†Œë©¸ìžë¥¼ virtualë¡œ ë§Œë“¤ì–´ë²„ë¦¬ë©´ ëœë‹¤.
+	// ì´ëŠ” Child ì†Œë©¸ìžë¥¼ í˜¸ì¶œí•˜ë©´ì„œ Child ì†Œë©¸ìžê°€ ì•Œì•„ì„œ Parent ì†Œë©¸ìžë¥¼ í˜¸ì¶œí•˜ë¯€ë¡œ
+	// Parent ì†Œë©¸ìžë¥¼ ë¨¼ì € í˜¸ì¶œí•˜ê²Œ ë˜ë©´, ParentëŠ” Childê°€ ìžˆëŠ”ì§€ ì—†ëŠ”ì§€ ëª¨ë¥´ë¯€ë¡œ,
+	// Child ì†Œë©¸ìžë¥¼ í˜¸ì¶œí•´ì¤„ ìˆ˜ ì—†ë‹¤. ê·¸ëž˜ì„œ ë¬¸ì œê°€ ìƒê¸´ë‹¤.
+	// ê·¸ëž˜ì„œ Base í´ëž˜ìŠ¤ë“¤ì€ ë°˜ë“œì‹œ ì†Œë©¸ìžë¥¼ virtualë¡œ ë§Œë“¤ì–´ì£¼ì–´ì•¼ ë‚˜ì¤‘ì— ë¬¸ì œê°€ ë°œìƒí•˜ì§€ ì•ŠëŠ”ë‹¤.
+	std::cout << "--- Parent í¬ì¸í„°ë¡œ Child ê°€ë¦¬ì¼°ì„ ë•Œ" << std::endl;
 	{
 		Parent* p = new Child();
 		delete p;
