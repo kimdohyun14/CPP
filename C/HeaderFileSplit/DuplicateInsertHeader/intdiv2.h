@@ -1,4 +1,4 @@
-#ifndef __INTDIV2_H__ // Á¶°ÇºÎ ÄÄÆÄÀÏ »ç¿ë
+#ifndef __INTDIV2_H__ // ì¡°ê±´ë¶€ ì»´íŒŒì¼ ì‚¬ìš©
 #define __INTDIV2_H__
 
 #include "stdiv2.h"
