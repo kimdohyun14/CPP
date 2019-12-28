@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	char name[100];
 	char lang[200];
 

@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	int val1;
 	std::cout << "첫 번째 숫자입력: ";
 	std::cin >> val1;
