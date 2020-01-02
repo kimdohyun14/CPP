@@ -8,7 +8,7 @@ private:
 public:
 	SelfRef(int n) : num(n)
 	{
-		cout << "°´Ã¼»ı¼º" << endl;
+		cout << "ê°ì²´ìƒì„±" << endl;
 	}
 	SelfRef& Adder(int n)
 	{
