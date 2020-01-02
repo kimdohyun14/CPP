@@ -17,9 +17,9 @@ public:
 public:
 	void ShowRecInfo()
 	{
-		cout << "ÁÂ »ó´Ü: " << "[" << upLeft.x << ", ";
+		cout << "ì¢Œ ìƒë‹¨: " << "[" << upLeft.x << ", ";
 		cout << upLeft.y << "]" << endl;
-		cout << "¿ì ÇÏ´Ü: " << "[" << lowRight.x << ", ";
+		cout << "ìš° í•˜ë‹¨: " << "[" << lowRight.x << ", ";
 		cout << lowRight.y << "]" << endl;
 	}
 };
