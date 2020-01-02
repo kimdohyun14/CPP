@@ -27,8 +27,8 @@ void SimpleFuncObj(SoSimple ob)
 int main()
 {
 	SoSimple obj(7);
-	cout << "ÇÔ¼öÈ£Ãâ Àü" << endl;
+	cout << "í•¨ìˆ˜í˜¸ì¶œ ì „" << endl;
 	SimpleFuncObj(obj);
-	cout << "ÇÔ¼öÈ£Ãâ ÈÄ" << endl;
+	cout << "í•¨ìˆ˜í˜¸ì¶œ í›„" << endl;
 	return 0;
 }
