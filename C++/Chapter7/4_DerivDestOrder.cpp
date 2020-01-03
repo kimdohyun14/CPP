@@ -1,31 +1,38 @@
 #include <iostream>
 using namespace std;
 
-class SoBase {
+class SoBase
+{
 private:
 	int baseNum;
 public:
-	SoBase(int n) :baseNum(n) {
+	SoBase(int n) : baseNum(n)
+	{
 		cout << "SoBase() : " << baseNum << endl;
 	}
-	~SoBase() {
-		cout << "~SoBase() : " << baseNum << endl;
+	~SoBase()
+	{
+		cout << "~SoBase() : "<<baseNum<<endl;
 	}
 };
 
-class SoDerived : public SoBase {
+class SoDerived : public SoBase
+{
 private:
 	int derivNum;
 public:
-	SoDerived(int n) : SoBase(n), derivNum(n) {
+	SoDerived(int n) : SoBase(n), derivNum(n)
+	{
 		cout << "SoDerived() : " << derivNum << endl;
 	}
-	~SoDerived() {
+	~SoDerived()
+	{
 		cout << "~SoDerived() : " << derivNum << endl;
 	}
 };
 
-int main() {
+int main()
+{
 	SoDerived drv1(15);
 	SoDerived drv2(27);
 	return 0;
