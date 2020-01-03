@@ -5,7 +5,7 @@ class SoSimple
 {
 private:
 	int num1;
-	mutable int num2; // const ÇÔ¼ö¿¡ ´ëÇØ ¿¹¿Ü¸¦ µÒ
+	mutable int num2; // const í•¨ìˆ˜ì— ëŒ€í•´ ì˜ˆì™¸ë¥¼ ë‘ 
 public:
 	SoSimple(int n1,int n2)
 		:num1(n1), num2(n2)
