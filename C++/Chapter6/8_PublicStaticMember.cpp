@@ -1,18 +1,21 @@
 #include <iostream>
 using namespace std;
 
-class SoSimple {
+class SoSimple
+{
 public:
 	static int simObjCnt;
 public:
-	SoSimple() {
+	SoSimple()
+	{
 		simObjCnt++;
 	}
 };
+int SoSimple::simObjCnt = 0;
 
-int SoSimple::simObjCnt = 0; //static 멤버변수 초기화
 
-int main() {
+int main()
+{
 	cout << SoSimple::simObjCnt << "번째 SoSimple 객체" << endl;
 	SoSimple sim1;
 	SoSimple sim2;

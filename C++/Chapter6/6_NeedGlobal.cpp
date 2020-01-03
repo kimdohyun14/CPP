@@ -1,40 +1,41 @@
 #include <iostream>
 using namespace std;
 
-class SoSimple {
-private:
-	static int simObjCnt;
+int simObjCnt = 0;
+int cmxObjCnt = 0;
+
+class SoSimple
+{
 public:
-	SoSimple() {
+	SoSimple()
+	{
 		simObjCnt++;
 		cout << simObjCnt << "¹øÂ° SoSimple °´Ã¼" << endl;
 	}
 };
 
-int SoSimple::simObjCnt = 0;
-
-class SoComplex {
-private:
-	static int cmxObjCnt;
+class SoComplex
+{
 public:
-	SoComplex() {
+	SoComplex()
+	{
 		cmxObjCnt++;
 		cout << cmxObjCnt << "¹øÂ° SoComplex °´Ã¼" << endl;
 	}
-	SoComplex(SoComplex &copy) { //º¹»ç »ý¼ºÀÚ
+	SoComplex(SoComplex& copy)
+	{
 		cmxObjCnt++;
 		cout << cmxObjCnt << "¹øÂ° SoComplex °´Ã¼" << endl;
 	}
 };
 
-int SoComplex::cmxObjCnt = 0;
-
-int main() {
+int main()
+{
 	SoSimple sim1;
 	SoSimple sim2;
 
-	SoComplex cmx1;
-	SoComplex cmx2 = cmx1;
-	SoComplex(); //ÀÓ½Ã°´Ã¼
+	SoComplex com1;
+	SoComplex com2 = com1;
+	SoComplex();
 	return 0;
 }

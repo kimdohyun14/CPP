@@ -1,30 +1,39 @@
 #include <iostream>
 using namespace std;
 
-int simObjCnt = 0;
-int cmxObjCnt = 0;
-
-class SoSimple {
+class SoSimple
+{
+private:
+	static int simObjCnt;
 public:
-	SoSimple() {
+	SoSimple()
+	{
 		simObjCnt++;
 		cout << simObjCnt << "번째 SoSimple 객체" << endl;
 	}
 };
+int SoSimple::simObjCnt = 0;
 
-class SoComplex {
+class SoComplex
+{
+private:
+	static int cmxObjCnt;
 public:
-	SoComplex() {
+	SoComplex()
+	{
 		cmxObjCnt++;
 		cout << cmxObjCnt << "번째 SoComplex 객체" << endl;
 	}
-	SoComplex(SoComplex &copy) { //복사 생성자
+	SoComplex(SoComplex& copy)
+	{
 		cmxObjCnt++;
 		cout << cmxObjCnt << "번째 SoComplex 객체" << endl;
 	}
 };
+int SoComplex::cmxObjCnt = 0;
 
-int main() {
+int main()
+{
 	SoSimple sim1;
 	SoSimple sim2;
 
