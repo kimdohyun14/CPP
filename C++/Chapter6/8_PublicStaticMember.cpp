@@ -16,12 +16,12 @@ int SoSimple::simObjCnt = 0;
 
 int main()
 {
-	cout << SoSimple::simObjCnt << "¹øÂ° SoSimple °´Ã¼" << endl;
+	cout << SoSimple::simObjCnt << "ë²ˆì§¸ SoSimple ê°ì²´" << endl;
 	SoSimple sim1;
 	SoSimple sim2;
 
-	cout << SoSimple::simObjCnt << "¹øÂ° SoSimple °´Ã¼" << endl;
-	cout << sim1.simObjCnt << "¹øÂ° SoSimple °´Ã¼" << endl;
-	cout << sim2.simObjCnt << "¹øÂ° SoSimple °´Ã¼" << endl;
+	cout << SoSimple::simObjCnt << "ë²ˆì§¸ SoSimple ê°ì²´" << endl;
+	cout << sim1.simObjCnt << "ë²ˆì§¸ SoSimple ê°ì²´" << endl;
+	cout << sim2.simObjCnt << "ë²ˆì§¸ SoSimple ê°ì²´" << endl;
 	return 0;
 }
