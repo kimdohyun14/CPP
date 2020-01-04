@@ -1,33 +1,43 @@
 #include <iostream>
 using namespace std;
 
-class First {
+class First
+{
 private:
 	char* strOne;
 public:
-	First(const char* str) {
+	First(const char* str)
+	{
+		cout << "First()" << endl;
 		strOne = new char[strlen(str) + 1];
 	}
-	virtual ~First() { //°¡»ó ¼Ò¸êÀÚ
+	virtual ~First()
+	{
 		cout << "~First()" << endl;
 		delete[] strOne;
 	}
 };
 
-class Second : public First {
+class Second : public First
+{
 private:
 	char* strTwo;
 public:
-	Second(const char* str1, const char* str2) : First(str1) {
+	Second(const char* str1, const char* str2)
+		:First(str1)
+	{
+		cout << "Second()" << endl;
 		strTwo = new char[strlen(str2) + 1];
 	}
-	~Second() {
+	virtual ~Second()
+	{
 		cout << "~Second()" << endl;
 		delete[] strTwo;
 	}
 };
 
-int main() {
+int main()
+{
 	First* ptr = new Second("simple", "complex");
 	delete ptr;
 	return 0;

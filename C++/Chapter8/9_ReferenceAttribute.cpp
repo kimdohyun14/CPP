@@ -1,49 +1,63 @@
 #include <iostream>
 using namespace std;
 
-class First {
+class First
+{
 public:
-	void FirstFunc() {
+	void FirstFunc()
+	{
 		cout << "FirstFunc()" << endl;
 	}
-	virtual void SimpleFunc() {
+	virtual void SimpleFunc()
+	{
 		cout << "First's SimpleFunc()" << endl;
 	}
 };
 
-class Second : public First {
+class Second : public First
+{
 public:
-	void SecondFunc() {
+	void SecondFunc()
+	{
 		cout << "SecondFunc()" << endl;
 	}
-	virtual void SimpleFunc() {
+	virtual void SimpleFunc()
+	{
 		cout << "Second's SimpleFunc()" << endl;
 	}
 };
 
-class Third : public Second {
+class Third : public Second
+{
 public:
-	void ThridFunc() {
+	void ThirdFunc()
+	{
 		cout << "ThirdFunc()" << endl;
 	}
-	virtual void SimpleFunc() {
+	virtual void SimpleFunc()
+	{
 		cout << "Third's SimpleFunc()" << endl;
 	}
 };
 
-int main() {
+int main()
+{
 	Third obj;
 	obj.FirstFunc();
 	obj.SecondFunc();
-	obj.ThridFunc();
+	obj.ThirdFunc();
 	obj.SimpleFunc();
+
+	cout << endl;
 
 	Second& sref = obj;
 	sref.FirstFunc();
 	sref.SecondFunc();
 	sref.SimpleFunc();
 
-	First& fref = obj;
+	cout << endl;
+
+	First& fref = sref;
 	fref.FirstFunc();
 	fref.SimpleFunc();
 	return 0;
