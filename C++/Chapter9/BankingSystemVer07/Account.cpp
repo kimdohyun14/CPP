@@ -32,9 +32,9 @@ int Account::Withdraw(int money)
 
 void Account::ShowAccInfo() const
 {
-	cout << "°èÁÂID: " << endl;
-	cout << "ÀÌ  ¸§: " << cusName << endl;
-	cout << "ÀÜ  ¾×: " << balance << endl;
+	cout << "ê³„ì¢ŒID: " << endl;
+	cout << "ì´  ë¦„: " << cusName << endl;
+	cout << "ìž”  ì•¡: " << balance << endl;
 }
 
 void Account::Deposit(int money)
