@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Å¬·¡½º Data¸¦ Èä³» ³½ ¿µ¿ª
+// í´ë˜ìŠ¤ Dataë¥¼ í‰ë‚´ ë‚¸ ì˜ì—­
 typedef struct Data
 {
 	int data;
