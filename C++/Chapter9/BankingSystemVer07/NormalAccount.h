@@ -14,8 +14,8 @@ public:
 
 	virtual void Deposit(int money)
 	{
-		Account::Deposit(money); // ¿ø±İÃß°¡
-		Account::Deposit(money * (interRate / 100.0)); // ÀÌÀÚÃß°¡
+		Account::Deposit(money); // ì›ê¸ˆì¶”ê°€
+		Account::Deposit(money * (interRate / 100.0)); // ì´ìì¶”ê°€
 	}
 };
 
