@@ -9,7 +9,7 @@ int main()
 	while (1)
 	{
 		manager.ShowMenu();
-		cout << "¼±ÅÃ: ";
+		cout << "ì„ íƒ: ";
 		cin >> choice;
 		cout << endl;
 
