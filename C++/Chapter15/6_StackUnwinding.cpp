@@ -13,7 +13,7 @@ int main()
 	}
 	catch (int expn)
 	{
-		cout << "¿¹¿ÜÄÚµå: " << expn << endl;
+		cout << "ì˜ˆì™¸ì½”ë“œ: " << expn << endl;
 	}
 	return 0;
 }
