@@ -7,8 +7,8 @@ void Divide(int num1, int num2)
 	{
 		if (num2 == 0)
 			throw 0;
-		cout << "¸ò : " << num1 / num2 << endl;
-		cout << "³ª¸ÓÁö : " << num1 % num2 << endl;
+		cout << "ëª« : " << num1 / num2 << endl;
+		cout << "ë‚˜ë¨¸ì§€: " << num1 % num2 << endl;
 	}
 	catch (int expn)
 	{
