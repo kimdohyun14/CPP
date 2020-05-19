@@ -6,7 +6,7 @@ int main()
 {
 	int n, x;
 	cin >> n;
-	priority_queue<int> pq; // ÃÖ´ë Èü ±¸Á¶
+	priority_queue<int> pq; // ìµœëŒ€ íž™ êµ¬ì¡°
 	for (int i = 0; i < n; i++)
 	{
 		cin >> x;
