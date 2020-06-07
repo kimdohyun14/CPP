@@ -1,15 +1,19 @@
 #include <iostream>
 
-typedef struct Animal {
-	char name[30]; //이름
-	int age;       //나이
+// 동물 프로그램에서 하나의 동물만을 정의할 때, 다만 문제점은 확장성에서 발생한다.
 
-	int health;    //체력
-	int food;      //배부른 정도
-	int clean;     //깨끗한 정도
-} Animal;
+typedef struct Animal
+{
+	char name[30];
+	int age;
 
-void create_animal(Animal* animal) {
+	int health;
+	int food;
+	int clean;
+}Animal;
+
+void create_animal(Animal* animal)
+{
 	std::cout << "동물의 이름? ";
 	std::cin >> animal->name;
 
@@ -21,40 +25,45 @@ void create_animal(Animal* animal) {
 	animal->clean = 100;
 }
 
-void play(Animal* animal) {
-	//놀이를 하면
+void play(Animal* animal)
+{
 	animal->health += 10;
 	animal->food -= 20;
 	animal->clean -= 30;
 }
 
-void one_day_pass(Animal* animal) {
-	//하루가 지나면
+void one_day_pass(Animal* animal)
+{
+	// 하루가 지나면
 	animal->health -= 10;
 	animal->food -= 30;
 	animal->clean -= 20;
 }
 
-void show_stat(Animal* animal) {
+void show_stat(Animal* animal)
+{
 	std::cout << animal->name << "의 상태" << std::endl;
 	std::cout << "체력	: " << animal->health << std::endl;
 	std::cout << "배부름	: " << animal->food << std::endl;
 	std::cout << "청결	: " << animal->clean << std::endl;
 }
 
-int main() {
+int main()
+{
 	Animal* list[10];
 	int animal_num = 0;
 
-	for (;;) {
+	for (;;)
+	{
 		std::cout << "1. 동물 추가하기" << std::endl;
 		std::cout << "2. 놀기" << std::endl;
-		std::cout << "3. 상태 보기" << std::endl;
+		std::cout << "3. 상태 보기" << std::endl << std::endl;
 
 		int input;
 		std::cin >> input;
 
-		switch (input) {
+		switch (input)
+		{
 			int play_with;
 		case 1:
 			list[animal_num] = new Animal;
@@ -62,34 +71,26 @@ int main() {
 
 			animal_num++;
 			break;
+
 		case 2:
 			std::cout << "누구랑 놀게? : ";
 			std::cin >> play_with;
 
-			//가능한 범위 이내에만 실행할 수 있게
-			if (play_with < animal_num)
-				play(list[play_with]);
-
+			if (play_with < animal_num) play(list[play_with]);
 			break;
+
 		case 3:
 			std::cout << "누구껄 보게? : ";
 			std::cin >> play_with;
-			if (play_with < animal_num)
-				show_stat(list[play_with]);
+
+			if (play_with < animal_num) show_stat(list[play_with]);
 			break;
 		}
 
-		for (int i = 0; i != animal_num; i++) {
-			one_day_pass(list[i]);
-		}
+		std::cout << "하루가 지났습니다." << std::endl << std::endl;
+		for (int i = 0; i != animal_num; i++) one_day_pass(list[i]);
 	}
-	for (int i = 0; i != animal_num; i++) {
-		delete list[i];
-	}
-}
 
-//생각하기
-//추가적으로 bird와 fish가 추가된다면?
-//bird는 날아오를 수 있는 변수 추가
-//fish는 잠수할 수 있는 깊이 추가
-// -> 객체지향 프로그래밍이 필요
+	for (int i = 0; i != animal_num; i++) delete list[i];
+	return 0;
+}
