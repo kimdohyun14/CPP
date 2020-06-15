@@ -9,9 +9,9 @@ public:
 	Test(char _c)
 	{
 		c = _c;
-		std::cout << "»ı¼ºÀÚ È£Ãâ " << c << std::endl;
+		std::cout << "ìƒì„±ì í˜¸ì¶œ " << c << std::endl;
 	}
-	~Test() { std::cout << "¼Ò¸êÀÚ È£Ãâ " << c << std::endl; }
+	~Test() { std::cout << "ì†Œë©¸ì í˜¸ì¶œ " << c << std::endl; }
 };
 
 void simple_function() { Test b('b'); }
