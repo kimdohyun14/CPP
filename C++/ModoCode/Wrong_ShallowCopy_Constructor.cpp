@@ -52,7 +52,7 @@ void Photon_Cannon::show_status()
 int main()
 {
 	Photon_Cannon pc1(3, 3, "Cannon");
-	Photon_Cannon pc2 = pc1;
+	Photon_Cannon pc2 = pc1; // 얕은 복사가 아닌, 깊은 복사가 일어나야한다. (런타임 에러)
 
 	pc1.show_status();
 	pc2.show_status();
