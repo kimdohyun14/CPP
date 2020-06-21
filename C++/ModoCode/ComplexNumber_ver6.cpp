@@ -86,7 +86,7 @@ double Complex::get_number(const char* str, int from, int to)
 		}
 		else
 		{
-			break; // 이상한 문자들이 올 경우
+			break;
 		}
 	}
 
