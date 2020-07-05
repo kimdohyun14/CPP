@@ -1,4 +1,4 @@
-## 기초적인 문법 공부
+## 프로그래밍 문법 공부
 
     C, C++, C#에 대해서 공부하고 적용해보자.
 
@@ -10,5 +10,5 @@
   
   * [ModoCode](https://modoocode.com/)
 
-  * 어소트락 게임아카데미(https://www.youtube.com/channel/UCOPlo0wPx7Uo4p8e3GaW2KQ)
+  * [어소트락 게임아카데미](https://www.youtube.com/channel/UCOPlo0wPx7Uo4p8e3GaW2KQ)
   
