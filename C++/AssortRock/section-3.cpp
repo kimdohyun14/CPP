@@ -3,25 +3,25 @@
 using namespace std;
 
 /*
-switch¿Í ¿µÈ¥ÀÇ µà¿ÀÀÇ ¿ªÇÒÀ» ÇÏ´Â Å°¿öµå
+switchì™€ ì˜í˜¼ì˜ ë“€ì˜¤ì˜ ì—­í• ì„ í•˜ëŠ” í‚¤ì›Œë“œ
 
-¿­°ÅÃ¼ : ¿¬¼ÓµÈ ¼ýÀÚ¿¡ ÀÌ¸§À» ºÎ¿©ÇÒ ¼ö ÀÖ´Â ±â´ÉÀÌ´Ù.
-enum ¿­°ÅÃ¼¸í {}ÀÇ ÇüÅÂ·Î ±¸¼ºµÈ´Ù.
-¿­°ÅÃ¼¸íÀ» ÀÌ¿ëÇØ¼­ ¿­°ÅÃ¼ Å¸ÀÔÀÇ º¯¼ö¸¦ ¼±¾ðµµ °¡´ÉÇÏ´Ù.
-Áï, ¿­°ÅÃ¼ ÀÚÃ¼°¡ »ç¿ëÀÚÁ¤ÀÇ º¯¼ö Å¸ÀÔÀÌ µÉ ¼öµµ ÀÖ´Ù.
-¿­°ÅÃ¼´Â ¼ýÀÚ¿¡ ÀÌ¸§À» ºÙ¿©ÁÖ´Â ±â´ÉÀÌ´Ù.
+ì—´ê±°ì²´ : ì—°ì†ëœ ìˆ«ìžì— ì´ë¦„ì„ ë¶€ì—¬í•  ìˆ˜ ìžˆëŠ” ê¸°ëŠ¥ì´ë‹¤.
+enum ì—´ê±°ì²´ëª… {}ì˜ í˜•íƒœë¡œ êµ¬ì„±ëœë‹¤.
+ì—´ê±°ì²´ëª…ì„ ì´ìš©í•´ì„œ ì—´ê±°ì²´ íƒ€ìž…ì˜ ë³€ìˆ˜ë¥¼ ì„ ì–¸ë„ ê°€ëŠ¥í•˜ë‹¤.
+ì¦‰, ì—´ê±°ì²´ ìžì²´ê°€ ì‚¬ìš©ìžì •ì˜ ë³€ìˆ˜ íƒ€ìž…ì´ ë  ìˆ˜ë„ ìžˆë‹¤.
+ì—´ê±°ì²´ëŠ” ìˆ«ìžì— ì´ë¦„ì„ ë¶™ì—¬ì£¼ëŠ” ê¸°ëŠ¥ì´ë‹¤.
 */
 
 enum NUM
 {
-	NUM_0, // ¾Æ¹«°Íµµ ºÎ¿©ÇÏÁö ¾ÊÀ» °æ¿ì 0ºÎÅÍ 1¾¿ Â÷·Ê·Î °ªÀÌ ºÎ¿©µÈ´Ù.
+	NUM_0, // ì•„ë¬´ê²ƒë„ ë¶€ì—¬í•˜ì§€ ì•Šì„ ê²½ìš° 0ë¶€í„° 1ì”© ì°¨ë¡€ë¡œ ê°’ì´ ë¶€ì—¬ëœë‹¤.
 	NUM_1,
 	NUM_2,
 	NUM_3
 };
 
-// ÀüÃ³¸®±â´Â ÄÄÆÄÀÏ Å¸ÀÓ¿¡ Áï, ÀÌ ¾ð¾î¸¦ ÄÄÇ»ÅÍ°¡ ¾Ë¾ÆµéÀ» ¼ö ÀÖ´Â ¾ð¾î·Î ¹ø¿ªÇÏ´Â ½Ã°£¿¡
-// ¾î¶² Æ¯Á¤ °ªÀÌ Á¤ÇØÁö´Â °ÍÀÌ´Ù.
+// ì „ì²˜ë¦¬ê¸°ëŠ” ì»´íŒŒì¼ íƒ€ìž„ì— ì¦‰, ì´ ì–¸ì–´ë¥¼ ì»´í“¨í„°ê°€ ì•Œì•„ë“¤ì„ ìˆ˜ ìžˆëŠ” ì–¸ì–´ë¡œ ë²ˆì—­í•˜ëŠ” ì‹œê°„ì—
+// ì–´ë–¤ íŠ¹ì • ê°’ì´ ì •í•´ì§€ëŠ” ê²ƒì´ë‹¤.
 #define NUM_4	4
 
 enum SRP
@@ -35,55 +35,55 @@ enum SRP
 int main()
 {
 	/*
-	switch ¹® : ºÐ±â¹®ÀÇ ÇÑ Á¾·ùÀÌ´Ù. 
-	if¹®ÀÌ Á¶°ÇÀ» Ã¼Å©ÇÏ´Â ºÐ±â¹®ÀÌ¶ó¸é, switch ¹®Àº °ªÀÌ ¹ºÁö¸¦ Ã¼Å©ÇÏ´Â ºÐ±â¹®ÀÌ´Ù.
-	ÇüÅÂ : switch(º¯¼ö){}ÀÇ ÇüÅÂ·Î ±¸¼ºµÈ´Ù. ÄÚµåºí·° ¾È¿¡´Â case, break ±¸¹®ÀÌ µé¾î°¡°Ô µÈ´Ù.
-	case »ó¼ö : ÀÇ ÇüÅÂ·Î Ã³¸®°¡ µÇ°í º¯¼ö°ªÀÌ ¹«¾ðÀÎÁö¿¡ µû¶ó¼­ case µÚ¿¡ ¿À´Â »ó¼ö¸¦ ºñ±³ÇÏ°Ô µÈ´Ù.
+	switch ë¬¸ : ë¶„ê¸°ë¬¸ì˜ í•œ ì¢…ë¥˜ì´ë‹¤. 
+	ifë¬¸ì´ ì¡°ê±´ì„ ì²´í¬í•˜ëŠ” ë¶„ê¸°ë¬¸ì´ë¼ë©´, switch ë¬¸ì€ ê°’ì´ ë­”ì§€ë¥¼ ì²´í¬í•˜ëŠ” ë¶„ê¸°ë¬¸ì´ë‹¤.
+	í˜•íƒœ : switch(ë³€ìˆ˜){}ì˜ í˜•íƒœë¡œ êµ¬ì„±ëœë‹¤. ì½”ë“œë¸”ëŸ­ ì•ˆì—ëŠ” case, break êµ¬ë¬¸ì´ ë“¤ì–´ê°€ê²Œ ëœë‹¤.
+	case ìƒìˆ˜ : ì˜ í˜•íƒœë¡œ ì²˜ë¦¬ê°€ ë˜ê³  ë³€ìˆ˜ê°’ì´ ë¬´ì–¸ì¸ì§€ì— ë”°ë¼ì„œ case ë’¤ì— ì˜¤ëŠ” ìƒìˆ˜ë¥¼ ë¹„êµí•˜ê²Œ ëœë‹¤.
 	*/
 
 	int iNumber = 1;
-	//cout << "¼ýÀÚ¸¦ ÀÔ·ÂÇØº¸ÀÚ : ";
+	//cout << "ìˆ«ìžë¥¼ ìž…ë ¥í•´ë³´ìž : ";
 	//cin >> iNumber;
 
 	switch (iNumber)
 	{
-	case NUM_1: // iNumber°ªÀÌ ¹«¾ùÀÎÁö¿¡ µû¶ó¼­ ½ÇÇàµÇ´Â case ±¸¹®ÀÌ °áÁ¤µÈ´Ù.
-		cout << "ÀÔ·ÂÇÑ ¼ýÀÚ´Â 1ÀÔ´Ï´Ù." << endl;
-		break; // break ¸¦ ¸¸³ª°Ô µÇ¸é switch¹®À» ºüÁ®³ª°¡°Ô µÈ´Ù.
+	case NUM_1: // iNumberê°’ì´ ë¬´ì—‡ì¸ì§€ì— ë”°ë¼ì„œ ì‹¤í–‰ë˜ëŠ” case êµ¬ë¬¸ì´ ê²°ì •ëœë‹¤.
+		cout << "ìž…ë ¥í•œ ìˆ«ìžëŠ” 1ìž…ë‹ˆë‹¤." << endl;
+		break; // break ë¥¼ ë§Œë‚˜ê²Œ ë˜ë©´ switchë¬¸ì„ ë¹ ì ¸ë‚˜ê°€ê²Œ ëœë‹¤.
 	case NUM_2:
-		cout << "ÀÔ·ÂÇÑ ¼ýÀÚ´Â 2ÀÔ´Ï´Ù." << endl;
-		// ¿©±âÃ³·³ break°¡ ¾øÀ» °æ¿ì ¹Ù·Î ¾Æ·¡¿¡ ÀÖ´Â case ±¸¹®µµ °­Á¦·Î ½ÇÇàÀÌ µÈ´Ù.
+		cout << "ìž…ë ¥í•œ ìˆ«ìžëŠ” 2ìž…ë‹ˆë‹¤." << endl;
+		// ì—¬ê¸°ì²˜ëŸ¼ breakê°€ ì—†ì„ ê²½ìš° ë°”ë¡œ ì•„ëž˜ì— ìžˆëŠ” case êµ¬ë¬¸ë„ ê°•ì œë¡œ ì‹¤í–‰ì´ ëœë‹¤.
 	case NUM_3:
-		cout << "ÀÔ·ÂÇÑ ¼ýÀÚ´Â 3ÀÔ´Ï´Ù." << endl;
+		cout << "ìž…ë ¥í•œ ìˆ«ìžëŠ” 3ìž…ë‹ˆë‹¤." << endl;
 		break;
 	case NUM_4:
-		cout << "ÀÔ·ÂÇÑ ¼ýÀÚ´Â 4ÀÔ´Ï´Ù." << endl;
+		cout << "ìž…ë ¥í•œ ìˆ«ìžëŠ” 4ìž…ë‹ˆë‹¤." << endl;
 		break;
-	default:  // case·Î ÁöÁ¤µÇ¾î ÀÖÁö ¾ÊÀº ¼ýÀÚ°¡ µé¾î¿Ã °æ¿ì ½ÇÇàµÈ´Ù.
-		cout << "±× ¿ÜÀÇ ¼ýÀÚÀÔ´Ï´Ù." << endl;
+	default:  // caseë¡œ ì§€ì •ë˜ì–´ ìžˆì§€ ì•Šì€ ìˆ«ìžê°€ ë“¤ì–´ì˜¬ ê²½ìš° ì‹¤í–‰ëœë‹¤.
+		cout << "ê·¸ ì™¸ì˜ ìˆ«ìžìž…ë‹ˆë‹¤." << endl;
 		break;
 	}
 
-	// ¿­°ÅÃ¼ Å¸ÀÔÀÇ º¯¼ö¸¦ ¼±¾ðÇß´Ù. ¿­°ÅÃ¼ Å¸ÀÔ º¯¼ö´Â ¹«Á¶°Ç 4byte¸¦ Â÷ÁöÇÏ°Ô µÈ´Ù.
-	// ¿­°ÅÃ¼¸¦ ÀÌ¿ëÇØ¼­ ¼±¾ðÇÑ º¯¼ö´Â °ªÀÇ Ç¥Çö ¹üÀ§°¡ ¿­°ÅÃ¼¿¡ ³ª¿­µÈ °ªµé ¾È¿¡¼­ ¼±ÅÃÇØ¼­
-	// »ç¿ëÇÑ´Ù.
-	NUM	eNum = (NUM)10; // Å¸ÀÔ Ä³½ºÆÃÀ» ÀÌ¿ëÇØ¼­ 10À» ³ÖÀ» ¼ø ÀÖ´Ù.
+	// ì—´ê±°ì²´ íƒ€ìž…ì˜ ë³€ìˆ˜ë¥¼ ì„ ì–¸í–ˆë‹¤. ì—´ê±°ì²´ íƒ€ìž… ë³€ìˆ˜ëŠ” ë¬´ì¡°ê±´ 4byteë¥¼ ì°¨ì§€í•˜ê²Œ ëœë‹¤.
+	// ì—´ê±°ì²´ë¥¼ ì´ìš©í•´ì„œ ì„ ì–¸í•œ ë³€ìˆ˜ëŠ” ê°’ì˜ í‘œí˜„ ë²”ìœ„ê°€ ì—´ê±°ì²´ì— ë‚˜ì—´ëœ ê°’ë“¤ ì•ˆì—ì„œ ì„ íƒí•´ì„œ
+	// ì‚¬ìš©í•œë‹¤.
+	NUM	eNum = (NUM)10; // íƒ€ìž… ìºìŠ¤íŒ…ì„ ì´ìš©í•´ì„œ 10ì„ ë„£ì„ ìˆœ ìžˆë‹¤.
 
-	// sizeof(Å¸ÀÔ or º¯¼ö)¸¦ ÇÏ°Ô µÇ¸é ÇØ´ç Å¸ÀÔ È¤Àº º¯¼öÀÇ ¸Þ¸ð¸® Å©±â¸¦ ±¸ÇØÁØ´Ù.
+	// sizeof(íƒ€ìž… or ë³€ìˆ˜)ë¥¼ í•˜ê²Œ ë˜ë©´ í•´ë‹¹ íƒ€ìž… í˜¹ì€ ë³€ìˆ˜ì˜ ë©”ëª¨ë¦¬ í¬ê¸°ë¥¼ êµ¬í•´ì¤€ë‹¤.
 	cout << sizeof(NUM) << endl;
-	// typeid(Å¸ÀÔ or º¯¼ö).name() À» ÇÏ°Ô µÇ¸é typeid ¾È¿¡ µé¾î°£ Å¸ÀÔ È¤Àº º¯¼öÀÇ Å¸ÀÔÀ»
-	// ¹®ÀÚ¿­·Î ¹ÝÈ¯ÇØÁØ´Ù.
+	// typeid(íƒ€ìž… or ë³€ìˆ˜).name() ì„ í•˜ê²Œ ë˜ë©´ typeid ì•ˆì— ë“¤ì–´ê°„ íƒ€ìž… í˜¹ì€ ë³€ìˆ˜ì˜ íƒ€ìž…ì„
+	// ë¬¸ìžì—´ë¡œ ë°˜í™˜í•´ì¤€ë‹¤.
 	cout << typeid(eNum).name() << endl;
 	cout << eNum << endl;
 
 	/*
-	¹Ýº¹¹® : Æ¯Á¤ ÀÛ¾÷À» ¹Ýº¹ÇØ¼­ ¼öÇàÇØÁÖ´Â ±â´ÉÀÌ´Ù.
-	Á¾·ù : for, while, do while 3Á¾·ù°¡ Á¸ÀçÇÑ´Ù.
-	while(Á¶°Ç½Ä){} ÀÇ ÇüÅÂ·Î ±¸¼ºµÈ´Ù.
-	while¹®Àº Á¶°Ç½ÄÀ» Ã¼Å©ÇØ¼­ trueÀÏ °æ¿ì ÄÚµåºí·° ¾ÈÀÇ ÄÚµå°¡ µ¿ÀÛµÇ°í
-	´Ù½Ã Á¶°Ç½ÄÀ» Ã¼Å©ÇÑ´Ù. Á¶°Ç½ÄÀÌ false°¡ µÇ¸é while¹®À» ºüÁ®³ª¿À°Ô µÈ´Ù.
-	¹Ýº¹¹® ¾È¿¡¼­ break¸¦ ¸¸³ª°ÔµÇ¸é ÇØ´ç ¹Ýº¹¹®À» ºüÁ®³ª¿À°Ô µÈ´Ù.
-	¹Ýº¹¹®Àº ¸¹ÀÌ Â¥¸é ÁÁ´Ù. °æÇèÀÌ Áß¿ä.
+	ë°˜ë³µë¬¸ : íŠ¹ì • ìž‘ì—…ì„ ë°˜ë³µí•´ì„œ ìˆ˜í–‰í•´ì£¼ëŠ” ê¸°ëŠ¥ì´ë‹¤.
+	ì¢…ë¥˜ : for, while, do while 3ì¢…ë¥˜ê°€ ì¡´ìž¬í•œë‹¤.
+	while(ì¡°ê±´ì‹){} ì˜ í˜•íƒœë¡œ êµ¬ì„±ëœë‹¤.
+	whileë¬¸ì€ ì¡°ê±´ì‹ì„ ì²´í¬í•´ì„œ trueì¼ ê²½ìš° ì½”ë“œë¸”ëŸ­ ì•ˆì˜ ì½”ë“œê°€ ë™ìž‘ë˜ê³ 
+	ë‹¤ì‹œ ì¡°ê±´ì‹ì„ ì²´í¬í•œë‹¤. ì¡°ê±´ì‹ì´ falseê°€ ë˜ë©´ whileë¬¸ì„ ë¹ ì ¸ë‚˜ì˜¤ê²Œ ëœë‹¤.
+	ë°˜ë³µë¬¸ ì•ˆì—ì„œ breakë¥¼ ë§Œë‚˜ê²Œë˜ë©´ í•´ë‹¹ ë°˜ë³µë¬¸ì„ ë¹ ì ¸ë‚˜ì˜¤ê²Œ ëœë‹¤.
+	ë°˜ë³µë¬¸ì€ ë§Žì´ ì§œë©´ ì¢‹ë‹¤. ê²½í—˜ì´ ì¤‘ìš”.
 	*/
 
 	iNumber = 0;
@@ -92,94 +92,94 @@ int main()
 		cout << iNumber << endl;
 		++iNumber;
 
-		if (iNumber == 4) // Áß°£¿¡ Á¶°ÇÀ» Áà¼­ ºüÁ®³ª¿À´Â °Íµµ °¡´ÉÇÏ´Ù.
+		if (iNumber == 4) // ì¤‘ê°„ì— ì¡°ê±´ì„ ì¤˜ì„œ ë¹ ì ¸ë‚˜ì˜¤ëŠ” ê²ƒë„ ê°€ëŠ¥í•˜ë‹¤.
 			break;
 	}
 
 
-	// È­¸éÀ» ±ú²ýÈ÷ Áö¿öÁØ´Ù.
+	// í™”ë©´ì„ ê¹¨ë—ížˆ ì§€ì›Œì¤€ë‹¤.
 	system("cls");
 
 	
-	//°¡À§, ¹ÙÀ§, º¸ °ÔÀÓÀ» ¸¸µé¾îº¸ÀÚ.
-	// ³­¼öÅ×ÀÌºí »ý¼º
+	//ê°€ìœ„, ë°”ìœ„, ë³´ ê²Œìž„ì„ ë§Œë“¤ì–´ë³´ìž.
+	// ë‚œìˆ˜í…Œì´ë¸” ìƒì„±
 	srand((unsigned int)time(0));
 
 	int iPlayer, iAI;
 
 	while (false)
 	{
-		cout << "1. °¡À§" << endl;
-		cout << "2. ¹ÙÀ§" << endl;
-		cout << "3. º¸" << endl;
-		cout << "4. Á¾·á" << endl;
-		cout << "¸Þ´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ";
+		cout << "1. ê°€ìœ„" << endl;
+		cout << "2. ë°”ìœ„" << endl;
+		cout << "3. ë³´" << endl;
+		cout << "4. ì¢…ë£Œ" << endl;
+		cout << "ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ";
 		cin >> iPlayer;
 
-		// ¿¹¿ÜÃ³¸®
+		// ì˜ˆì™¸ì²˜ë¦¬
 		if (iPlayer < SRP_S || iPlayer > SRP_END)
 		{
-			cout << "Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¿´½À´Ï´Ù." << endl;
-			// ÀÏ½ÃÁ¤Áö
+			cout << "ìž˜ëª»ëœ ê°’ì„ ìž…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤." << endl;
+			// ì¼ì‹œì •ì§€
 			system("pause");
-			// continue : ¹Ýº¹¹®ÀÇ ½ÃÀÛÁ¡À¸·Î ÀÌµ¿½ÃÄÑÁÖ´Â ±â´ÉÀÌ´Ù.
+			// continue : ë°˜ë³µë¬¸ì˜ ì‹œìž‘ì ìœ¼ë¡œ ì´ë™ì‹œì¼œì£¼ëŠ” ê¸°ëŠ¥ì´ë‹¤.
 			continue;
 		}
 
 		else if (iPlayer == SRP_END)
 			break;
 
-		// º¿ÀÌ ¼±ÅÃÀ» ÇÑ´Ù.
-		iAI = rand() % 3 + SRP_S; // 1 ~ 3 Áß¿¡ ÇÏ³ª¸¦ °í¸¥´Ù.
+		// ë´‡ì´ ì„ íƒì„ í•œë‹¤.
+		iAI = rand() % 3 + SRP_S; // 1 ~ 3 ì¤‘ì— í•˜ë‚˜ë¥¼ ê³ ë¥¸ë‹¤.
 
 		switch (iAI)
 		{
 		case SRP_S:
-			cout << "AI : °¡À§" << endl;
+			cout << "AI : ê°€ìœ„" << endl;
 			break;
 		case SRP_R:
-			cout << "AI : ¹ÙÀ§" << endl;
+			cout << "AI : ë°”ìœ„" << endl;
 			break;
 		case SRP_P:
-			cout << "AI : º¸" << endl;
+			cout << "AI : ë³´" << endl;
 			break;
 		}
 
-		// ¾î¶»°Ô ÀÌ±â°í Áö´ÂÁö ºñ±³ÇÏ´Â ¹æ¹ý
-		// if ÁßÃ¸¹®À¸·Î ÇÏ¸é 3 x 3 = 9ÀÇ ºñ±³¹®À» ÀÛ¼ºÇØ¾ß µÇÁö¸¸,
-		// ¾Æ·¡¿Í °°ÀÌ ±ÔÄ¢¹®À» ¸¸µé¸é °£´ÜÇÏ°Ô ¿Ï¼ºµÈ´Ù.
+		// ì–´ë–»ê²Œ ì´ê¸°ê³  ì§€ëŠ”ì§€ ë¹„êµí•˜ëŠ” ë°©ë²•
+		// if ì¤‘ì²©ë¬¸ìœ¼ë¡œ í•˜ë©´ 3 x 3 = 9ì˜ ë¹„êµë¬¸ì„ ìž‘ì„±í•´ì•¼ ë˜ì§€ë§Œ,
+		// ì•„ëž˜ì™€ ê°™ì´ ê·œì¹™ë¬¸ì„ ë§Œë“¤ë©´ ê°„ë‹¨í•˜ê²Œ ì™„ì„±ëœë‹¤.
 		
 		/*
-		µÑÀÌ »¯À» ¶§ °á°ú°ªÀÌ 0ÀÌ¸é ºñ±ä °æ¿ì,
-		µÑÀÌ »¯À» ¶§ °á°ú°ªÀÌ 1ÀÌ°Å³ª -2ÀÌ¸é ½Â¸®,
-		±× ÀÌ¿ÜÀÇ °á°ú°ªÀº ÇÃ·¹ÀÌ¾î°¡ Áø °æ¿ì·Î Á¤¸®ÇÒ ¼ö ÀÖ´Ù.
+		ë‘˜ì´ ëºì„ ë•Œ ê²°ê³¼ê°’ì´ 0ì´ë©´ ë¹„ê¸´ ê²½ìš°,
+		ë‘˜ì´ ëºì„ ë•Œ ê²°ê³¼ê°’ì´ 1ì´ê±°ë‚˜ -2ì´ë©´ ìŠ¹ë¦¬,
+		ê·¸ ì´ì™¸ì˜ ê²°ê³¼ê°’ì€ í”Œë ˆì´ì–´ê°€ ì§„ ê²½ìš°ë¡œ ì •ë¦¬í•  ìˆ˜ ìžˆë‹¤.
 		*/
 
 		int iWin = iPlayer - iAI;
 
 		/*
 		if (iWin == 1 || iWin == -2)
-			cout << "Player ½Â¸®" << endl;
+			cout << "Player ìŠ¹ë¦¬" << endl;
 
 		else if (iWin == 0)
-			cout << "ºñ±è" << endl;
+			cout << "ë¹„ê¹€" << endl;
 
 		else
-			cout << "AI ½Â¸®" << endl;
+			cout << "AI ìŠ¹ë¦¬" << endl;
 		*/
 
-		// À§¿¡ Ã³·³ ¼Ò½º¸¦ Â© ¼öµµ ÀÖ°í, ¾Æ·¡Ã³·³ switch¹®À» ÀÌ¿ëÇØ¼­ °£´ÜÇÏ°Ôµµ ÇÒ ¼ö ÀÖ´Ù.
+		// ìœ„ì— ì²˜ëŸ¼ ì†ŒìŠ¤ë¥¼ ì§¤ ìˆ˜ë„ ìžˆê³ , ì•„ëž˜ì²˜ëŸ¼ switchë¬¸ì„ ì´ìš©í•´ì„œ ê°„ë‹¨í•˜ê²Œë„ í•  ìˆ˜ ìžˆë‹¤.
 		switch (iWin)
 		{
 		case 1:
 		case -2:
-			cout << "Player ½Â¸®" << endl;
+			cout << "Player ìŠ¹ë¦¬" << endl;
 			break;
 		case 0:
-			cout << "ºñ±è" << endl;
+			cout << "ë¹„ê¹€" << endl;
 			break;
 		default:
-			cout << "AI ½Â¸®" << endl;
+			cout << "AI ìŠ¹ë¦¬" << endl;
 			break;
 		}
 
@@ -188,38 +188,38 @@ int main()
 	}
 
 	/*
-	for¹® : ¹Ýº¹¹®ÀÇ ÇÑ Á¾·ùÀÌ´Ù.
-	ÇüÅÂ : for(ÃÊ±â°ª; Á¶°Ç½Ä; Áõ°¨°ª) {} ÀÇ ÇüÅÂ·Î ±¸¼ºÀÌ µÈ´Ù.
-	Á¶°Ç½ÄÀÌ trueÀÌ¸é ÄÚµåºí·°ÀÇ ÄÚµå°¡ µ¿ÀÛµÈ´Ù.
-	¹«ÇÑ·çÇÁ¸¦ µ¹¸±¶§´Â for(;;) {} À» ÇØÁÖ¸é ¹«ÇÑÀ¸·Î µ¹¾Æ°¡°Ô µÈ´Ù.
-	for¹®¿¡¼­ ÃÊ±â°ªÀº Ã³À½ for¹®¿¡ ÁøÀÔÇÒ ¶§ µü 1¹ø¸¸ µ¿ÀÛµÈ´Ù.
-	±× ÈÄ¿¡ Á¶°Ç½ÄÀ» Ã¼Å©ÇÏ°í Á¶°Ç½ÄÀÌ trueÀÌ¸é ÄÚµåºí·°ÀÇ ÄÚµå°¡ µ¿ÀÛµÈ ÈÄ¿¡ Áõ°¨°ªÀ» Ã³¸®ÇÑ´Ù.
-	±× ÈÄ ´Ù½Ã Á¶°Ç½ÄÀ» Ã¼Å©ÇÏ°í trueÀÌ¸é µ¿ÀÛµÇ°í Áõ°¨ -> Á¶°Ç -> Áõ°¨ -> Á¶°ÇÀÇ ¼ø¼­·Î Ã³¸®°¡ µÇ´Ù
-	Á¶°ÇÀÌ falseÀÌ°Å³ª break¸¦ ¸¸³ª°Ô µÇ¸é for¹®À» ºüÁ®³ª°¡°Ô µÈ´Ù.
+	forë¬¸ : ë°˜ë³µë¬¸ì˜ í•œ ì¢…ë¥˜ì´ë‹¤.
+	í˜•íƒœ : for(ì´ˆê¸°ê°’; ì¡°ê±´ì‹; ì¦ê°ê°’) {} ì˜ í˜•íƒœë¡œ êµ¬ì„±ì´ ëœë‹¤.
+	ì¡°ê±´ì‹ì´ trueì´ë©´ ì½”ë“œë¸”ëŸ­ì˜ ì½”ë“œê°€ ë™ìž‘ëœë‹¤.
+	ë¬´í•œë£¨í”„ë¥¼ ëŒë¦´ë•ŒëŠ” for(;;) {} ì„ í•´ì£¼ë©´ ë¬´í•œìœ¼ë¡œ ëŒì•„ê°€ê²Œ ëœë‹¤.
+	forë¬¸ì—ì„œ ì´ˆê¸°ê°’ì€ ì²˜ìŒ forë¬¸ì— ì§„ìž…í•  ë•Œ ë”± 1ë²ˆë§Œ ë™ìž‘ëœë‹¤.
+	ê·¸ í›„ì— ì¡°ê±´ì‹ì„ ì²´í¬í•˜ê³  ì¡°ê±´ì‹ì´ trueì´ë©´ ì½”ë“œë¸”ëŸ­ì˜ ì½”ë“œê°€ ë™ìž‘ëœ í›„ì— ì¦ê°ê°’ì„ ì²˜ë¦¬í•œë‹¤.
+	ê·¸ í›„ ë‹¤ì‹œ ì¡°ê±´ì‹ì„ ì²´í¬í•˜ê³  trueì´ë©´ ë™ìž‘ë˜ê³  ì¦ê° -> ì¡°ê±´ -> ì¦ê° -> ì¡°ê±´ì˜ ìˆœì„œë¡œ ì²˜ë¦¬ê°€ ë˜ë‹¤
+	ì¡°ê±´ì´ falseì´ê±°ë‚˜ breakë¥¼ ë§Œë‚˜ê²Œ ë˜ë©´ forë¬¸ì„ ë¹ ì ¸ë‚˜ê°€ê²Œ ëœë‹¤.
 	*/
 
-	// ÃÊ±â°ª : i = 0  |  Á¶°Ç½Ä : i < 10  | Áõ°¨°ª : ++i
-	// ¸ÕÀú for¹®¿¡ ÁøÀÔÇÏ¸é¼­ ÃÊ±â°ªÀÌ ½ÇÇàµÇ¹Ç·Î i¸¦ 0À¸·Î ÃÊ±âÈ­ÇÑ´Ù.
-	// ±× ÈÄ¿¡ i < 10À» Ã¼Å©ÇØ¼­ 0ÀÏ¶§´Â true°¡ ³ª¿À°Ô µÇ¾î i°ªÀ» Ãâ·ÂÇÑ´Ù.
-	// ±× ÈÄ¿¡ Áõ°¨À» Ã³¸®ÇÏ´Âµ¥ ++À» ÇÏ¸é 0¿¡¼­ 1ÀÌ µÇ°í Á¶°ÇÀ» Ã¼Å©ÇÏ°Ô µÈ´Ù.
-	// 1Àº 10º¸´Ù ÀÛÀ¸¹Ç·Î true°¡ ³ª¿À°í 1Ãâ·Â ++ÇØ¼­ 2°¡µÇ°í Á¶°Ç true
-	// 2Ãâ·Â 3, 4, 5, 6, 7, 8, 9 ±îÁö´Â Á¶°ÇÀÌ true¶ó¼­ 9¸¦ Ãâ·ÂÇÏ°í
-	// ++ÀÌ µÇ¾î 10ÀÌ µÇ°í 10 < 10 À» ÇÏ¸é Á¶°ÇÀÌ false°¡ µÇ¹Ç·Î ¹Ýº¹¹®À» ºüÁ®³ª¿À°Ô µÈ´Ù.
+	// ì´ˆê¸°ê°’ : i = 0  |  ì¡°ê±´ì‹ : i < 10  | ì¦ê°ê°’ : ++i
+	// ë¨¼ì € forë¬¸ì— ì§„ìž…í•˜ë©´ì„œ ì´ˆê¸°ê°’ì´ ì‹¤í–‰ë˜ë¯€ë¡œ ië¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”í•œë‹¤.
+	// ê·¸ í›„ì— i < 10ì„ ì²´í¬í•´ì„œ 0ì¼ë•ŒëŠ” trueê°€ ë‚˜ì˜¤ê²Œ ë˜ì–´ iê°’ì„ ì¶œë ¥í•œë‹¤.
+	// ê·¸ í›„ì— ì¦ê°ì„ ì²˜ë¦¬í•˜ëŠ”ë° ++ì„ í•˜ë©´ 0ì—ì„œ 1ì´ ë˜ê³  ì¡°ê±´ì„ ì²´í¬í•˜ê²Œ ëœë‹¤.
+	// 1ì€ 10ë³´ë‹¤ ìž‘ìœ¼ë¯€ë¡œ trueê°€ ë‚˜ì˜¤ê³  1ì¶œë ¥ ++í•´ì„œ 2ê°€ë˜ê³  ì¡°ê±´ true
+	// 2ì¶œë ¥ 3, 4, 5, 6, 7, 8, 9 ê¹Œì§€ëŠ” ì¡°ê±´ì´ trueë¼ì„œ 9ë¥¼ ì¶œë ¥í•˜ê³ 
+	// ++ì´ ë˜ì–´ 10ì´ ë˜ê³  10 < 10 ì„ í•˜ë©´ ì¡°ê±´ì´ falseê°€ ë˜ë¯€ë¡œ ë°˜ë³µë¬¸ì„ ë¹ ì ¸ë‚˜ì˜¤ê²Œ ëœë‹¤.
 
-	// µ¿½Ã¸¦ ¹Ýº¹À¸·Î Ã³¸®(Å»·ÐÀÇ w ½ºÅ³ÀÇ °æ¿ì Ç¥Ã¢À» ºü¸£°Ô 3°³¸¦ »ý¼ºÇØ¼­ ³¯¸®°í µ¹¾Æ¿À´Â °æ¿ì)
+	// ë™ì‹œë¥¼ ë°˜ë³µìœ¼ë¡œ ì²˜ë¦¬(íƒˆë¡ ì˜ w ìŠ¤í‚¬ì˜ ê²½ìš° í‘œì°½ì„ ë¹ ë¥´ê²Œ 3ê°œë¥¼ ìƒì„±í•´ì„œ ë‚ ë¦¬ê³  ëŒì•„ì˜¤ëŠ” ê²½ìš°)
 	for (int i = 0; i < 10; ++i)
 	{
 		cout << i << endl;
 	}
 
-	// ±¸±¸´Ü 2´ÜÀ» Ãâ·ÂÇØº¸ÀÚ.
+	// êµ¬êµ¬ë‹¨ 2ë‹¨ì„ ì¶œë ¥í•´ë³´ìž.
 	for (int i = 1; i <= 9; i++)
 	{
 		cout << "2 * " << i << " = " << 2 * i << endl;
 	}
 
-	// 1 ~ 100 »çÀÌÀÇ ¼ýÀÚÁß Â¦¼ö¸¸ Ãâ·ÂÇÏ´Â for¹®À» ÀÛ¼ºÇØº¸ÀÚ.
-	// i += 2, i = i + 2 (¿¬»êÀÚ Ãà¾àÇü)
+	// 1 ~ 100 ì‚¬ì´ì˜ ìˆ«ìžì¤‘ ì§ìˆ˜ë§Œ ì¶œë ¥í•˜ëŠ” forë¬¸ì„ ìž‘ì„±í•´ë³´ìž.
+	// i += 2, i = i + 2 (ì—°ì‚°ìž ì¶•ì•½í˜•)
 	for (int i = 2; i <= 100; i += 2)
 		cout << i << ' ';
 
@@ -227,13 +227,13 @@ int main()
 
 	for (int i = 1; i <= 100; ++i)
 	{
-		// 3°ú 7ÀÇ °ø¹è¼ö¸¸ Ãâ·ÂÇÏ°í ½ÍÀ» ¶§
+		// 3ê³¼ 7ì˜ ê³µë°°ìˆ˜ë§Œ ì¶œë ¥í•˜ê³  ì‹¶ì„ ë•Œ
 		if (i % 3 == 0 && i % 7 == 0)
 			cout << i << endl;
 	}
 
-	// ÁßÃ¸ for¹® : for¹® ¾È¿¡ ¶Ç´Ù¸¥ for¹®ÀÌ Á¸ÀçÇÏ´Â ÇüÅÂÀÌ´Ù.
-	// ÃÑ 100¹ø µ·´Ù.
+	// ì¤‘ì²© forë¬¸ : forë¬¸ ì•ˆì— ë˜ë‹¤ë¥¸ forë¬¸ì´ ì¡´ìž¬í•˜ëŠ” í˜•íƒœì´ë‹¤.
+	// ì´ 100ë²ˆ ëˆë‹¤.
 	for (int i = 0; i < 10; ++i)
 	{
 		for (int j = 0; j < 10; ++j)
@@ -241,6 +241,19 @@ int main()
 			// something to do.
 		}
 	}
+	
+	/*
+	do while ë¬¸ : ë°˜ë³µë¬¸ì˜ í•œ ì¢…ë¥˜ì´ë‹¤.
+	do {}while(ì¡°ê±´ì‹); ì˜ í˜•íƒœë¡œ êµ¬ì„±ëœë‹¤.
+	whileë¬¸ì€ ì²˜ìŒ ì§„ìž…ë¶€í„° ì¡°ê±´ì‹ì„ ì²´í¬í•˜ì§€ë§Œ do whileì€ ì²˜ìŒ í•œë²ˆì€ ë¬´ì¡°ê±´ ë™ìž‘ì´ ë˜ê³ ,
+	ê·¸ í›„ì— ì¡°ê±´ì‹ì„ ì²´í¬í•´ì„œ trueì¼ ê²½ìš° ë™ìž‘ë˜ëŠ” ë°˜ë³µë¬¸ì´ë‹¤.
+	*/
+	int iNumber = 0;
+
+	do
+	{
+		cout << iNumber << endl; // ì²˜ìŒ í•œ ë²ˆì€ ë¬´ì¡°ê±´ ì‹¤í–‰í•œë‹¤. (ì¡°ê±´ë¬¸ ê²€ì‚¬ë„ ì—†ì´)
+	} while (iNumber > 0);
 
 	return 0;
 }
