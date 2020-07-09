@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-#define NAME_SIZE	50
+#define NAME_SIZE   50
 #define BOOK_MAX    100
 /*
-°ü¸®ÇÁ·Î±×·¥ ¸¸µé±â
-µµ¼­ ´ë¿© ÇÁ·Î±×·¥
-1. Ã¥µî·Ï
-2. Ã¥ ´ë¿©
-3. Ã¥ ¹İ³³
-4. Ã¥ ¸ñ·Ï
-5. Á¾·á
+ê´€ë¦¬í”„ë¡œê·¸ë¨ ë§Œë“¤ê¸°
+ë„ì„œ ëŒ€ì—¬ í”„ë¡œê·¸ë¨
+1. ì±…ë“±ë¡
+2. ì±… ëŒ€ì—¬
+3. ì±… ë°˜ë‚©
+4. ì±… ëª©ë¡
+5. ì¢…ë£Œ
 
-Ã¥ ±¸Á¶Ã¼´Â ÀÌ¸§, ´ë¿© ±İ¾×, Ã¥ ¹øÈ£, ´ë¿©¿©ºÎ°¡ ÇÊ¿äÇÏ´Ù.
-Ã¥ ¸ñ·ÏÀ» ¼±ÅÃÇÏ¸é Ã¥ Á¤º¸¸¦ Ãâ·ÂÇØÁØ´Ù.
+ì±… êµ¬ì¡°ì²´ëŠ” ì´ë¦„, ëŒ€ì—¬ ê¸ˆì•¡, ì±… ë²ˆí˜¸, ëŒ€ì—¬ì—¬ë¶€ê°€ í•„ìš”í•˜ë‹¤.
+ì±… ëª©ë¡ì„ ì„ íƒí•˜ë©´ ì±… ì •ë³´ë¥¼ ì¶œë ¥í•´ì¤€ë‹¤.
 */
 
 enum MENU
@@ -28,38 +28,38 @@ enum MENU
 
 struct _tagBook
 {
-	char	strBookName[NAME_SIZE];   // Ã¥ ÀÌ¸§
-	int		iRentalAmount;            // ´ë¿© ±İ¾×
-	int		iBookNumber;              // Ã¥ ¹øÈ£
-	bool	bRental;                  // ´ë¿© ¿©ºÎ
+	char	strBookName[NAME_SIZE];   // ì±… ì´ë¦„
+	int	iRentalAmount;            // ëŒ€ì—¬ ê¸ˆì•¡
+	int	iBookNumber;              // ì±… ë²ˆí˜¸
+	bool	bRental;                  // ëŒ€ì—¬ ì—¬ë¶€
 };
 
 int main()
 {
 	_tagBook tBookArr[BOOK_MAX] = {};
-	int iBookCount = 0;               // µî·ÏµÈ Ã¥ÀÇ ¼ö
-	int iBookNumber = 1;              // Ã¥ÀÇ °íÀ¯ ¹øÈ£
+	int iBookCount = 0;               // ë“±ë¡ëœ ì±…ì˜ ìˆ˜
+	int iBookNumber = 1;              // ì±…ì˜ ê³ ìœ  ë²ˆí˜¸
 
 	char strRantalName[NAME_SIZE] = {};
 
-	// Ã¥À» Ã£¾Ò´ÂÁö Ã¼Å©ÇÏ´Â º¯¼ö
+	// ì±…ì„ ì°¾ì•˜ëŠ”ì§€ ì²´í¬í•˜ëŠ” ë³€ìˆ˜
 	bool bFind = false;
 
 	while (true)
 	{
 		system("cls");
 
-		// ¸Ş´º¸¦ Ãâ·ÂÇÑ´Ù.
-		cout << "1. Ã¥ µî·Ï" << endl;
-		cout << "2. Ã¥ ´ë¿©" << endl;
-		cout << "3. Ã¥ ¹İ³³" << endl;
-		cout << "4. Ã¥ ¸ñ·Ï" << endl;
-		cout << "5. Á¾·á" << endl;
-		cout << "¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ";
+		// ë©”ë‰´ë¥¼ ì¶œë ¥í•œë‹¤.
+		cout << "1. ì±… ë“±ë¡" << endl;
+		cout << "2. ì±… ëŒ€ì—¬" << endl;
+		cout << "3. ì±… ë°˜ë‚©" << endl;
+		cout << "4. ì±… ëª©ë¡" << endl;
+		cout << "5. ì¢…ë£Œ" << endl;
+		cout << "ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ";
 		int iMenu;
 		cin >> iMenu;
 
-		// ¿¹¿ÜÃ³¸®
+		// ì˜ˆì™¸ì²˜ë¦¬
 		if (cin.fail())
 		{
 			cin.clear();
@@ -68,96 +68,96 @@ int main()
 			continue;
 		}
 
-		// Á¾·á
+		// ì¢…ë£Œ
 		if (iMenu == MENU_EXIT)
 			break;
 
-		// ¸Ş´º¿¡ µû¶ó¼­ ´ÙÀ½À» µ¿ÀÛÇÑ´Ù.
+		// ë©”ë‰´ì— ë”°ë¼ì„œ ë‹¤ìŒì„ ë™ì‘í•œë‹¤.
 		switch (iMenu)
 		{
 		case MENU_INSERT:
 			system("cls");
-			cout << "============== Ã¥ µî·Ï ==============" << endl;
+			cout << "============== ì±… ë“±ë¡ ==============" << endl;
 
-			// ÃÖ´ëÄ¡°¡ µÇ¸é, ´õÀÌ»ó Ã¥À» µî·ÏÇÏÁö ¸øÇÏ°Ô µÈ´Ù.
+			// ìµœëŒ€ì¹˜ê°€ ë˜ë©´, ë”ì´ìƒ ì±…ì„ ë“±ë¡í•˜ì§€ ëª»í•˜ê²Œ ëœë‹¤.
 			if (iBookCount == BOOK_MAX)
 			{
-				cout << "Ã¥À» ´õÀÌ»ó µî·ÏÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+				cout << "ì±…ì„ ë”ì´ìƒ ë“±ë¡í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
 				break;
 			}
 
-			// ³²¾ÆÀÖ´Â ÀÔ·Â¹öÆÛ¿¡¼­ '\n'À» Áö¿öÁØ´Ù.
+			// ë‚¨ì•„ìˆëŠ” ì…ë ¥ë²„í¼ì—ì„œ '\n'ì„ ì§€ì›Œì¤€ë‹¤.
 			cin.ignore(1024, '\n');
 
-			cout << "Ã¥ ÀÌ¸§ : ";
+			cout << "ì±… ì´ë¦„ : ";
 			cin.getline(tBookArr[iBookCount].strBookName, NAME_SIZE);
 
-			cout << "´ë¿© ±İ¾× : ";
+			cout << "ëŒ€ì—¬ ê¸ˆì•¡ : ";
 			cin >> tBookArr[iBookCount].iRentalAmount;
 
-			// Ã¥ ¹øÈ£´Â °íÀ¯ ¹øÈ£ÀÌ¹Ç·Î, µî·ÏÇÏ¸é ±× ¼ø¼­´ë·Î ¹øÈ£¸¦ ºÎ¿©ÇØÁØ´Ù.
+			// ì±… ë²ˆí˜¸ëŠ” ê³ ìœ  ë²ˆí˜¸ì´ë¯€ë¡œ, ë“±ë¡í•˜ë©´ ê·¸ ìˆœì„œëŒ€ë¡œ ë²ˆí˜¸ë¥¼ ë¶€ì—¬í•´ì¤€ë‹¤.
 			tBookArr[iBookCount].iBookNumber = iBookNumber;
 
-			// Ã¥À» µî·ÏÇÏ¸é ´ë¿© ¿©ºÎ´Â Ã³À½¿¡´Â ¹«Á¶°Ç ºô¸± ¼ö ÀÖ°Ô ¼³Á¤ÇÑ´Ù.
-			// ¿©±â¼­ÀÇ false´Â ¾ÆÁ÷ ¾Æ¹«µµ ´ë¿©¸¦ ÇÏÁö ¾Ê¾Ò´Ù´Â ¶æÀÌ´Ù.
+			// ì±…ì„ ë“±ë¡í•˜ë©´ ëŒ€ì—¬ ì—¬ë¶€ëŠ” ì²˜ìŒì—ëŠ” ë¬´ì¡°ê±´ ë¹Œë¦´ ìˆ˜ ìˆê²Œ ì„¤ì •í•œë‹¤.
+			// ì—¬ê¸°ì„œì˜ falseëŠ” ì•„ì§ ì•„ë¬´ë„ ëŒ€ì—¬ë¥¼ í•˜ì§€ ì•Šì•˜ë‹¤ëŠ” ëœ»ì´ë‹¤.
 			tBookArr[iBookCount].bRental = false;
 
 			++iBookNumber;
 			++iBookCount;
 
-			cout << "Ã¥ µî·ÏÀ» ¼º°øÀûÀ¸·Î ¼öÇàÇß½À´Ï´Ù." << endl;
+			cout << "ì±… ë“±ë¡ì„ ì„±ê³µì ìœ¼ë¡œ ìˆ˜í–‰í–ˆìŠµë‹ˆë‹¤." << endl;
 			break;
 		case MENU_RENTAL:
 			system("cls");
-			cout << "============== Ã¥ ´ë¿© ==============" << endl;
+			cout << "============== ì±… ëŒ€ì—¬ ==============" << endl;
 
-			// ³²¾ÆÀÖ´Â ÀÔ·Â¹öÆÛ¿¡¼­ '\n'À» Áö¿öÁØ´Ù.
+			// ë‚¨ì•„ìˆëŠ” ì…ë ¥ë²„í¼ì—ì„œ '\n'ì„ ì§€ì›Œì¤€ë‹¤.
 			cin.ignore(1024, '\n');
 
-			cout << "´ë¿©ÇÏ°íÀÚ ÇÏ´Â Ã¥ÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "ëŒ€ì—¬í•˜ê³ ì í•˜ëŠ” ì±…ì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin.getline(strRantalName, NAME_SIZE);
 
-			// Ã³À½¿¡´Â Ã£Áö ¸øÇß´Ù°í °¡Á¤ÇÏ°í ½ÃÀÛÇÑ´Ù.
+			// ì²˜ìŒì—ëŠ” ì°¾ì§€ ëª»í–ˆë‹¤ê³  ê°€ì •í•˜ê³  ì‹œì‘í•œë‹¤.
 			bFind = false;
 			for (int i = 0; i < iBookCount; ++i)
 			{
-				// Ã¥À» Ã£¾Ò´Ù¸é?
+				// ì±…ì„ ì°¾ì•˜ë‹¤ë©´?
 				if (strcmp(strRantalName, tBookArr[i].strBookName) == 0)
 				{
 					bFind = true;
 
-					// Ã¥ÀÇ ´ë¿© ¿©ºÎ¸¦ È®ÀÎÇÑ´Ù.
+					// ì±…ì˜ ëŒ€ì—¬ ì—¬ë¶€ë¥¼ í™•ì¸í•œë‹¤.
 					if (tBookArr[i].bRental == false)
 					{
 						tBookArr[i].bRental = true;
-						cout << "Ã¥À» ´ë¿©ÇÏ¿´½À´Ï´Ù." << endl;
+						cout << "ì±…ì„ ëŒ€ì—¬í•˜ì˜€ìŠµë‹ˆë‹¤." << endl;
 						break;
 					}
 					
 					else
 					{
-						cout << "Ã¥À» ´ë¿©ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+						cout << "ì±…ì„ ëŒ€ì—¬í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
 						break;
 					}
 				}
 			}
 
 			if (bFind == false)
-				cout << "´ë¿©ÇÏ°íÀÚ ÇÏ´Â Ã¥À» Ã£À» ¼ö ¾ø½À´Ï´Ù." << endl;
+				cout << "ëŒ€ì—¬í•˜ê³ ì í•˜ëŠ” ì±…ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
 
 
 			break;
 		case MENU_RETURN:
 			system("cls");
-			cout << "============== Ã¥ ¹İ³³ ==============" << endl;
+			cout << "============== ì±… ë°˜ë‚© ==============" << endl;
 
-			// ³²¾ÆÀÖ´Â ÀÔ·Â¹öÆÛ¿¡¼­ '\n'À» Áö¿öÁØ´Ù.
+			// ë‚¨ì•„ìˆëŠ” ì…ë ¥ë²„í¼ì—ì„œ '\n'ì„ ì§€ì›Œì¤€ë‹¤.
 			cin.ignore(1024, '\n');
 
-			cout << "¹İ³³ÇÏ°íÀÚ ÇÏ´Â Ã¥ÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "ë°˜ë‚©í•˜ê³ ì í•˜ëŠ” ì±…ì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin.getline(strRantalName, NAME_SIZE);
 
-			// Ã³À½¿¡´Â Ã£Áö ¸øÇß´Ù°í °¡Á¤ÇÏ°í ½ÃÀÛÇÑ´Ù.
+			// ì²˜ìŒì—ëŠ” ì°¾ì§€ ëª»í–ˆë‹¤ê³  ê°€ì •í•˜ê³  ì‹œì‘í•œë‹¤.
 			bFind = false;
 			for (int i = 0; i < iBookCount; ++i)
 			{
@@ -166,31 +166,31 @@ int main()
 					bFind = true;
 					tBookArr[i].bRental = false;
 
-					cout << "Ã¥ ¹İ³³À» ÇÏ¼Ì½À´Ï´Ù." << endl;
+					cout << "ì±… ë°˜ë‚©ì„ í•˜ì…¨ìŠµë‹ˆë‹¤." << endl;
 					break;
 				}
 			}
 
 			if (bFind == false)
-				cout << "¹İ³³ÇÏ°íÀÚ ÇÏ´Â Ã¥ÀÇ ÀÌ¸§À» Ã£À» ¼ö ¾ø½À´Ï´Ù." << endl;
+				cout << "ë°˜ë‚©í•˜ê³ ì í•˜ëŠ” ì±…ì˜ ì´ë¦„ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
 
 			break;
 		case MENU_LIST:
 			system("cls");
-			cout << "============== Ã¥ ¸ñ·Ï ==============" << endl;
+			cout << "============== ì±… ëª©ë¡ ==============" << endl;
 			
 			for (int i = 0; i < iBookCount; ++i)
 			{
-				cout << "Ã¥ ÀÌ¸§ : " << tBookArr[i].strBookName << endl;
-				cout << "Ã¥ ¹øÈ£ : " << tBookArr[i].iBookNumber << endl;
-				cout << "´ë¿© ±İ¾× : " << tBookArr[i].iRentalAmount << endl;
-				cout << "´ë¿© ¿©ºÎ : ";
+				cout << "ì±… ì´ë¦„ : " << tBookArr[i].strBookName << endl;
+				cout << "ì±… ë²ˆí˜¸ : " << tBookArr[i].iBookNumber << endl;
+				cout << "ëŒ€ì—¬ ê¸ˆì•¡ : " << tBookArr[i].iRentalAmount << endl;
+				cout << "ëŒ€ì—¬ ì—¬ë¶€ : ";
 
 				if (tBookArr[i].bRental == false)
-					cout << "°¡´É" << endl;
+					cout << "ê°€ëŠ¥" << endl;
 
 				else
-					cout << "ºÒ°¡´É" << endl;
+					cout << "ë¶ˆê°€ëŠ¥" << endl;
 
 				cout << endl;
 			}
@@ -199,14 +199,14 @@ int main()
 		case MENU_EXIT:
 			break;
 		default:
-			cout << "¸Ş´º¸¦ Àß¸ø¼±ÅÃÇß½À´Ï´Ù." << endl;
+			cout << "ë©”ë‰´ë¥¼ ì˜ëª»ì„ íƒí–ˆìŠµë‹ˆë‹¤." << endl;
 			break;
 		}
 
 		system("pause");
 	}
 
-	cout << "µµ¼­ °ü¸® ÇÁ·Î±×·¥À» ÀÌ¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù." << endl;
+	cout << "ë„ì„œ ê´€ë¦¬ í”„ë¡œê·¸ë¨ì„ ì´ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤." << endl;
 
 	return 0;
 }
