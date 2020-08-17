@@ -18,7 +18,7 @@ public:
 		return *this;
 	}
 
-	// ΘΔΐ§ Αυ°΅
+	// ν›„μ„ μ¦κ° μ—°μ‚°μ
 	const Point operator++(int)
 	{
 		const Point retobj(xpos, ypos);
