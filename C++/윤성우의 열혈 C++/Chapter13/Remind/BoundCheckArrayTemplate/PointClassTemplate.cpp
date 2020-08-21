@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// 클래스 템플릿 예시
+// class template
 template<typename T>
 class Point
 {
