@@ -12,10 +12,10 @@ public:
 };
 
 template<typename T>
-T SimpleStaticMem<T>::mem = 0; // static ����� �ʱ�ȭ ����
+T SimpleStaticMem<T>::mem = 0; // static 멤버의 초기화 문장
 
 template<>
-long SimpleStaticMem<long>::mem = 5;
+long SimpleStaticMem<long>::mem = 5; // 따로 long으로 특수화시켜 static 멤버를 5로 초기화 할 수 있다.
  
 int main()
 {
