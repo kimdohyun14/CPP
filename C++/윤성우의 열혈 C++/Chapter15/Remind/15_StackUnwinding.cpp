@@ -13,7 +13,7 @@ int main()
 	}
 	catch (int expn)
 	{
-		cout << "예외코드: " << expn << endl;
+		cout << ": " << expn << endl;
 	}
 
 	return 0;
