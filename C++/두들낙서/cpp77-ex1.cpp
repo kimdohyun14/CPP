@@ -1,4 +1,4 @@
-// override : �켱�ϴ�
+// override : 우선하다.
 #include <iostream>
 using namespace std;
 
