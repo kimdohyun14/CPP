@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+int main()
+{
+	using namespace std;
+	char charr[20];
+	string str;
+
+	// strlen은 첫 번째 원소에서 출발하여 널 문자에 도달할 때까지 바이트들을 카운팅한다.
+	cout << "입력 이전에 charr에 있는 문자열의 길이 : " << strlen(charr) << endl;
+	cout << "입력 이전에 str에 있는 문자열의 길이 : " << str.size() << endl;
+	cout << "텍스트 한 행을 입력\n";
+	cin.getline(charr, 20);
+	cout << "입력한 텍스트: " << charr << endl;
+	cout << "또 다른 텍스트 한 행을 입력\n";
+	getline(cin, str);
+	cout << "입력한 텍스트: " << str << endl;
+	cout << "입력 이후에 charr에 있는 문자열의 길이 : " << strlen(charr) << endl;
+	cout << "입력 이후에 str에 있는 문자열의 길이 : " << str.size() << endl;
+	return 0;
+}
